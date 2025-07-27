@@ -7,15 +7,22 @@ import os
 
 st.set_page_config(page_title="Agentic AI", layout="wide")
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def load_css():
     css_path = os.path.join(os.path.dirname(__file__), "styles", "custom.css")
     with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
+        
 def load_local_lottie(filename: str):
     lottie_path = os.path.join(os.path.dirname(__file__), "lottie", filename)
     with open(lottie_path, "r") as f:
         return json.load(f)
+
+def load_image_path(filename):
+    return os.path.join(BASE_DIR, "images", filename)
+
+
 
 load_css()
 
@@ -24,7 +31,8 @@ logo_anim = load_local_lottie("logo.json")
 tutor_anim = load_local_lottie("tutor.json")
 plan_anim = load_local_lottie("plan.json")
 
-st.sidebar.image("images/agentic_logo.png", width=150)
+logo_img_path = load_image_path("agentic_logo.png")
+st.sidebar.image(logo_img_path, width=150)
 
 st.markdown("<h1>Agentic AI for Personalized Learning Paths</h1>", unsafe_allow_html=True)
 
