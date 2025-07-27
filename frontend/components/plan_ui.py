@@ -8,7 +8,7 @@ def show_plan_ui():
 
     if st.button("Generate Plan") and goal:
         try:
-            res = requests.post("http://localhost:8000/plan", json={"goal": goal})
+            res = requests.post("https://agentic-backend-n9ha.onrender.com", json={"goal": goal})
             if res.status_code == 200:
                 st.success("✅ Plan Generated Successfully")
                 st.code(res.json()['plan'], language='markdown')
