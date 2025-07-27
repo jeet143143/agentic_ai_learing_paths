@@ -12,16 +12,17 @@ def load_css():
     with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-def load_local_lottie(path):
-    with open(path, "r") as f:
+def load_local_lottie(filename: str):
+    lottie_path = os.path.join(os.path.dirname(__file__), "lottie", filename)
+    with open(lottie_path, "r") as f:
         return json.load(f)
 
 load_css()
 
 # Load Lottie animations
-logo_anim = load_local_lottie("lottie/logo.json")
-tutor_anim = load_local_lottie("lottie/tutor.json")
-plan_anim = load_local_lottie("lottie/plan.json")
+logo_anim = load_local_lottie("logo.json")
+tutor_anim = load_local_lottie("tutor.json")
+plan_anim = load_local_lottie("plan.json")
 
 st.sidebar.image("images/agentic_logo.png", width=150)
 
