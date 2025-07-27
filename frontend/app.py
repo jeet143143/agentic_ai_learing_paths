@@ -3,11 +3,13 @@ from components.plan_ui import show_plan_ui
 from components.tutor_ui import show_tutor_ui
 from streamlit_lottie import st_lottie
 import json
+import os
 
 st.set_page_config(page_title="Agentic AI", layout="wide")
 
 def load_css():
-    with open("styles/custom.css") as f:
+    css_path = os.path.join(os.path.dirname(__file__), "styles", "custom.css")
+    with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 def load_local_lottie(path):
