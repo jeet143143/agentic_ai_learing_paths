@@ -1,69 +1,129 @@
-# Agentic AI for Personalized Education Paths
+# 🤖 Agentic AI – Personalized Learning Path Generator
 
-### 👤 Created by: Jeet Senapati
-
----
-
-## 🚀 Project Overview
-**Agentic AI** is an intelligent, agent-based education system that offers:
-- AI-powered tutoring support
-- Personalized learning path generation
-- Future modules: assessments and content recommendations
-
-It uses **Streamlit** as the frontend with **animated UI**, and Python FastAPI as backend (expected) for handling tutoring and planning logic.
-
-The core principle is based on **Agentic AI**: where AI agents reason, plan, and act autonomously to personalize learning experiences for each user.
+Agentic AI is an intelligent education assistant built using FastAPI (backend) and Streamlit (frontend). It helps users generate **personalized study plans** and get **tutor-style answers** to academic questions using AI.
 
 ---
 
-## 🧠 How It Works
-1. **Home Interface**: Clean dashboard with 4 cards – Tutor, Plan, Assessment, Recommendation
-2. **Tutor Section**: Ask questions and get AI-generated answers using a backend API
-3. **Plan Section**: Enter your learning goals and get a tailored study roadmap
-4. **Assessment & Recommendation**: Coming Soon modules
+## 🌐 Live Demo
 
-Back navigation and animations provide a smooth and interactive UX.
+🔗 Frontend URL: [https://agentic-ai-learing-paths.onrender.com](https://agentic-ai-learing-paths.onrender.com)
 
 ---
 
-## 🛠️ Setup Instructions
+## 📦 Project Structure
 
-### 🔧 Requirements:
-- Python 3.9+
-- pip
-
-### 📦 Install Dependencies
-```bash
-pip install streamlit streamlit-lottie requests
 ```
-
-### 📁 Folder Structure
-```
-agentic-edu-in/
-├── frontend/
-│   ├── app.py
-│   ├── styles/
-│   │   └── custom.css
+agentic_ai_learing_paths/
+├── backend/         # FastAPI-based backend with plan & tutor agents
+│   ├── agents/
+│   ├── rl/
+│   ├── data/
+│   ├── utils/
+│   ├── main.py      # Main API server
+│   └── ...
+├── frontend/        # Streamlit-based frontend UI
 │   ├── components/
-│   │   ├── tutor_ui.py
-│   │   └── plan_ui.py
-│   ├── lottie/
-│   │   ├── tutor.json
-│   │   ├── plan.json
-│   │   └── logo.json
-│   └── images/
-│       └── agentic_logo.png
+│   │   ├── plan_ui.py
+│   │   └── tutor_ui.py
+│   ├── app.py       # Streamlit entry point
+│   └── ...
 ```
 
-### ▶️ Run the Project
+---
+
+## 🧠 Features
+
+- ✨ Generate custom study plans based on your goals (e.g., "Prepare for GATE Exam")
+- 🤓 Get tutor-style answers to academic questions ("What is a black hole?")
+- ⚡ Backend powered by OpenAI and FastAPI
+- 🎨 Interactive frontend UI using Streamlit
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend:** Python, FastAPI, OpenAI API
+- **Frontend:** Streamlit, CSS
+- **Deployment:** Render.com (both frontend & backend)
+
+---
+
+## 🚀 Local Development Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/agentic_ai_learing_paths.git
+cd agentic_ai_learing_paths
+```
+
+### 2. Set Up Python Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+```
+
+### 3. Add `.env` File
+
+Inside the `backend/` folder, create a `.env` file:
+
+```env
+OPENAI_API_KEY=your_openai_key_here
+```
+
+### 4. Run Backend
+
+```bash
+cd backend
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### 5. Run Frontend
+
+Open a new terminal:
+
 ```bash
 cd frontend
 streamlit run app.py
 ```
 
-Make sure your backend is running at `http://localhost:8000` for `/plan` and `/tutor` routes.
+---
+
+## 🌍 Deployment Instructions (Render)
+
+### Backend (FastAPI)
+
+1. Connect GitHub repo to [Render](https://render.com)
+2. Create a new Web Service
+3. Environment:
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `uvicorn backend.main:app --host 0.0.0.0 --port 10000`
+4. Add `OPENAI_API_KEY` in environment variables
+5. Deploy
+
+### Frontend (Streamlit)
+
+1. Deploy `app.py` from `frontend/` as another web service
+2. Update all URLs in `plan_ui.py` and `tutor_ui.py` to use backend Render link
 
 ---
 
-## 🌟 Credits
-Created by **Jeet Senapati** with a focus on AI-driven personalized learning and an animated, modern UI using Lottie and Streamlit.
+## 📌 Known Improvements
+
+- Add login/auth system
+- Track user progress over time
+- Support file upload for assignments
+- Improve UI with animations
+
+---
+
+## 👨‍💻 Author
+
+**Jeet Senapati**  
+Email: senapatijeet2004@gmail.com  
+Project: Agentic AI Learning Paths
+
+---
+
