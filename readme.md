@@ -53,7 +53,7 @@ agentic_ai_learing_paths/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/agentic_ai_learing_paths.git
+git clone https://github.com/jeet143143/agentic_ai_learing_paths.git
 cd agentic_ai_learing_paths
 ```
 
