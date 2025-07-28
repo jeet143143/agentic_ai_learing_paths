@@ -8,7 +8,7 @@ def show_tutor_ui():
 
     if st.button("Get Answer") and question:
         try:
-            res = requests.post("https://agentic-backend-n9ha.onrender.com/tutor", json={"question": question})
+            res = requests.post("https://agentic-backend-k0sm.onrender.com/tutor", json={"question": question})
             if res.status_code == 200:
                 st.success("✅ Answer received")
                 st.markdown(res.json()['response'])
